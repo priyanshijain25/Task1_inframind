@@ -13,18 +13,20 @@ A resilient, containerized FastAPI-based CRUD application designed to manage emp
 •	Cloud-Native Autoscaling: Instrumented with a Kubernetes deployment configuration ready to scale infrastructure dynamically up and down based on resource spikes.
 
 
-🛠️ Project Architecture
-[ Locust Test Runners ]
-          │
-          ▼ (HTTP Concurrent Traffic)
-   [ Minikube Tunnel / Port-Forward ]
-          │
-          ▼
-   [ Kubernetes Service ]
-          │
-     ┌────┴────┐ (Load Balancing)
-     ▼         ▼
-[ Pod 1 ]   [ Pod 2 ]  <─── Managed dynamically by Horizontal Pod Autoscaler (HPA)
+## 🛠️ Project Architecture
+
+```text
+     [ Locust Test Runners ]
+                │
+                ▼ (HTTP Concurrent Traffic)
+     [ Minikube Tunnel / Port-Forward ]
+                │
+                ▼
+       [ Kubernetes Service ]
+                │
+       ┌────────┴────────┐ (Load Balancing)
+       ▼                 ▼
+   [ Pod 1 ]         [ Pod 2 ]  <─── Managed dynamically by HPA
 
 
 📋 Prerequisites
@@ -35,24 +37,19 @@ Ensure you have the following installed locally:
 
 
 🔧 Installation & Local Setup
-
-1. **Clone the repository and navigate into the project directory:**
-   ```bash
-   git clone [https://github.com/priyanshijain25/Task1_inframind.git](https://github.com/priyanshijain25/Task1_inframind.git)
-   cd Task1_inframind
-
-	1.	Set up a Python Virtual Environment:
+	1.	Clone the repository and navigate into the project directory:
+git clone https://github.com/priyanshijain25/Task1_inframind.git
+cd Task1_inframind
+	2.	Set up a Python Virtual Environment:
 python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-
-	2.	Install Dependencies:
+source venv/bin/activate
+(Windows users run: venv\Scripts\activate)
+	1.	Install Dependencies:
 pip install fastapi uvicorn pydantic locust
-
-	3.	Run the Server Manually (Optional Dev Check):
+	2.	Run the Server Manually (Optional Dev Check):
 uvicorn fastapi.main:app --reload
+Once running, open http://localhost:8000/docs in your browser to interact with the Swagger UI documentation.
 
-
-Open http://localhost:8000/docs to interact with the Swagger UI.
 
 
 ## 📡 API Endpoints Summary

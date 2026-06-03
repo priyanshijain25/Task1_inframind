@@ -35,24 +35,22 @@ Ensure you have the following installed locally:
 
 
 🔧 Installation & Local Setup
-	
-    1.	Clone the repository:
 
-git clone https://github.com/priyanshijain25/Task1_inframind.git
-cd Task1_inframind
+1. **Clone the repository and navigate into the project directory:**
+   ```bash
+   git clone [https://github.com/priyanshijain25/Task1_inframind.git](https://github.com/priyanshijain25/Task1_inframind.git)
+   cd Task1_inframind
 
-	2.	Set up a Python Virtual Environment:
-
+	1.	Set up a Python Virtual Environment:
 python3 -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
-	3.	Install Dependencies:
-
+	2.	Install Dependencies:
 pip install fastapi uvicorn pydantic locust
 
-	4.	Run the Server Manually (Optional Dev Check):
-
+	3.	Run the Server Manually (Optional Dev Check):
 uvicorn fastapi.main:app --reload
+
 
 Open http://localhost:8000/docs to interact with the Swagger UI.
 

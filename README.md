@@ -50,8 +50,6 @@ pip install fastapi uvicorn pydantic locust
 uvicorn fastapi.main:app --reload
 Once running, open http://localhost:8000/docs in your browser to interact with the Swagger UI documentation.
 
-
-
 ## 📡 API Endpoints Summary
 
 | Method | Endpoint | Description |

@@ -37,28 +37,34 @@ Ensure you have the following installed locally:
 🔧 Installation & Local Setup
 	
     1.	Clone the repository:
+
 git clone https://github.com/priyanshijain25/Task1_inframind.git
 cd Task1_inframind
 
 	2.	Set up a Python Virtual Environment:
+
 python3 -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 	3.	Install Dependencies:
+
 pip install fastapi uvicorn pydantic locust
 
 	4.	Run the Server Manually (Optional Dev Check):
+
 uvicorn fastapi.main:app --reload
 
 Open http://localhost:8000/docs to interact with the Swagger UI.
 
 
-📡 API Endpoints Summary
-Method	Endpoint	Description
-GET	/	API Home / Check Health Status
-GET	/read	Fetch all registered employees
-GET	/read/{employee_id}	Fetch profile of a specific employee
-GET	/sort?sort_by=experience	Sort employee pool by years of experience (asc/desc)
-POST	/create	Register a new compliant employee profile
-PUT	/update/{employee_id}	Partially modify tracked employee data patches
-DELETE	/delete/{employee_id}	Evict employee record from tracking system
+## 📡 API Endpoints Summary
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| **GET** | `/` | API Home / Check Health Status |
+| **GET** | `/read` | Fetch all registered employees |
+| **GET** | `/read/{employee_id}` | Fetch profile of a specific employee |
+| **GET** | `/sort?sort_by=experience` | Sort employee pool by years of experience (`asc`/`desc`) |
+| **POST** | `/create` | Register a new compliant employee profile |
+| **PUT** | `/update/{employee_id}` | Partially modify tracked employee data patches |
+| **DELETE** | `/delete/{employee_id}` | Evict employee record from tracking system |

@@ -3,6 +3,9 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel , Field 
 from typing import List , Annotated , Optional
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -124,7 +127,15 @@ def delete_employee(employee_id:str):
 
     return JSONResponse(status_code=200,content={'message':'employee deleted successfully'})
 
+@app.get("/test-warning")
+def test_warning():
+    print("WARNING: CPU usage is high")
+    return {"status": "warning generated"}
 
+@app.get("/test-error")
+def test_error():
+    print("ERROR: Database connection failed")
+    return {"status": "error generated"}
 
 
 

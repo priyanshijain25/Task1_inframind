@@ -1,0 +1,6 @@
+ERROR: Database connection failed
+WARNING: CPU usage is high
+ERROR: Database connection failed
+WARNING: CPU usage is high
+[2026-06-08T13:59:14.420941678Z] ERROR: Database connection failed
+[2026-06-08T13:59:14.404678386Z] WARNING: CPU usage is high
